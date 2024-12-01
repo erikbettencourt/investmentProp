@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Property Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Investment Property Calculator</h1>
+        
+        <form id="property-form">
+            <!-- Purchase Price -->
+            <div class="form-group">
+                <label for="purchasePrice">Purchase Price ($):</label>
+                <input type="number" id="purchasePrice" value="500000">
+            </div>
+
+            <!-- Down Payment -->
+            <div class="form-group">
+                <label for="downPayment">Down Payment (%):</label>
+                <select id="downPayment">
+                    <option value="5">5%</option>
+                    <option value="10">10%</option>
+                    <option value="15">15%</option>
+                    <option value="20" selected>20%</option>
+                    <option value="25">25%</option>
+                </select>
+                <span id="calculatedDownPayment"></span>
+            </div>
+
+            <!-- Loan Terms -->
+            <div class="form-group">
+                <label for="interestRate">Interest Rate (%):</label>
+                <input type="number" id="interestRate" value="5" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="loanDuration">Loan Duration (years):</label>
+                <select id="loanDuration">
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="30" selected>30</option>
+                </select>
+            </div>
+
+            <!-- Estimated Monthly Rent -->
+            <div class="form-group">
+                <label for="monthlyRent">Estimated Monthly Rent ($/month):</label>
+                <input type="number" id="monthlyRent" value="2500">
+            </div>
+
+            <!-- Operating Expenses -->
+            <h2>Operating Expenses (Annual)</h2>
+            <div class="form-group">
+                <label for="propertyTaxes">Property Taxes (% of purchase price):</label>
+                <select id="propertyTaxes">
+                    <option value="1.14">MA - 1.14%</option>
+                    <option value="1.93">NH - 1.93%</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="insurance">Home Insurance ($/year):</label>
+                <input type="number" id="insurance" value="1500">
+            </div>
+            <div class="form-group">
+                <label>Maintenance & Repairs (2% of purchase price, $/year):</label>
+                <span id="maintenance"></span>
+            </div>
+            <div class="form-group">
+                <label>Total Operating Expenses ($/year):</label>
+                <span id="totalExpenses"></span>
+            </div>
+
+            <!-- Results Section -->
+            <h2>Results</h2>
+            <div class="form-group">
+                <label>Monthly Mortgage Payment ($/month):</label>
+                <span id="monthlyMortgage"></span>
+            </div>
+            <div class="form-group">
+                <label>Net Operating Income (NOI, $/year):</label>
+                <span id="noi"></span>
+            </div>
+            <div class="form-group">
+                <label>Cash Flow ($/year):</label>
+                <span id="cashFlow"></span>
+            </div>
+            <div class="form-group">
+                <label>Cash-on-Cash Return (%/year):</label>
+                <span id="cashOnCashReturn"></span>
+            </div>
+            <div class="form-group">
+                <label>Cap Rate (%/year):</label>
+                <span id="capRate"></span>
+            </div>
+            <div class="form-group">
+                <label>1% Rule:</label>
+                <span id="onePercentRule"></span>
+            </div>
+            <div class="form-group">
+                <label>50% Rule:</label>
+                <span id="fiftyPercentRule"></span>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
